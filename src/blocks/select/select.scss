@@ -1,0 +1,91 @@
+@import '@scss/variables.scss';
+
+.select {
+    position: relative;
+    
+    &_open {
+
+        .select__content {
+            max-height: 500px;
+        }
+
+        .backdrop {
+            display: block;
+        }
+    }
+}
+
+.select__button {
+    padding: 12px 0;
+
+    & .selected-option {
+        position: relative;
+        font-size: torem(12);
+        line-height: torem(22);
+        font-weight: 500;
+        box-sizing: border-box;
+        text-transform: uppercase;
+        text-align: end;
+        margin-right: 13px;
+
+        &::after {
+            position: absolute;
+            top: calc(50% - 4px);
+            right: -13px;
+            content: '';
+            display: block;
+            border: 4px solid transparent; 
+            border-top: 4px solid #202020;
+
+        }
+    }
+}
+
+.select__content {
+    width: 280px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    z-index: 70;
+    max-height: 0;
+    overflow: hidden;
+    transition: 500ms ease;
+}
+
+.select__input {
+    display: none;
+
+    &:checked + label {
+        background: $green;
+    }
+
+    &:disabled + label {
+        color: rgba($color: $black, $alpha: .3);
+        cursor: auto;
+
+        &:hover {
+            background: #fff;
+        }
+    }
+}
+
+.select__label {
+    
+    width: 100%;
+    padding: 12px 24px;
+    position: relative;
+    font-size: torem(12);
+    line-height: torem(22);
+    font-weight: 500;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 300ms ease;
+
+    &:hover {
+        background: rgba($color: $green, $alpha: .3);
+    }
+}

@@ -1,0 +1,25 @@
+// Colors
+
+$black: #1F2020;
+$grey: #F2F2F2;
+$green: #7BB899;
+
+@function torem($px) {
+    @return $px / 16 + rem;
+}
+
+@mixin small {
+    @media (max-width: 499px) { @content; }
+}
+
+@mixin medium {
+    @media (max-width: 699px) { @content; }
+}
+
+@mixin large {
+    @media (max-width: 999px) { @content; }
+}
+
+@mixin large-up {
+    @media (max-width: 1400px) { @content; }
+}

@@ -1,0 +1,67 @@
+@import '@scss/variables.scss';
+
+.breadcrumb {
+    position: absolute;
+    top: calc(100% + 2rem);
+    display: flex;
+}
+
+.breadcrumb__item {
+    line-height: torem(10);
+
+    a,
+    span {        
+        text-transform: uppercase;
+        font-size: torem(10);
+        line-height: torem(10);
+        color: #fff;
+        opacity: .3;
+    }
+
+    & + & {
+        margin-left: 19px;
+
+        a,
+        span {
+            position: relative;
+
+            &::after {
+                position: absolute;
+                top: calc(50% - 1px);
+                left: -11px;
+                content: '';
+                display: block;
+                width: 3px;
+                height: 3px;
+                border-radius: 50%;
+                background: #fff;
+                opacity: .3;
+            }
+        }
+    }
+}
+
+@include medium {
+    .breadcrumb {
+        top: calc(100% + 1rem);
+    }
+
+    .breadcrumb__item {
+
+        a,
+        span {
+            color: $black;
+        }
+    
+        & + & {
+    
+            a,
+            span {
+    
+                &::after {
+                    background: $black;
+                }
+            }
+        }
+    }
+}

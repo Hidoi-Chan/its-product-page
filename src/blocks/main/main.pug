@@ -1,0 +1,30 @@
+include ../toggle/toggle.pug
+
+main.main
+    aside.main__sidebar#main-sidebar
+        div.backdrop
+        div.main__filters-block
+            +toggle('main__toggle', 'Новинки', 'new')
+            +toggle('main__toggle', 'Есть в наличии', 'in-stock')
+            +toggle('main__toggle', 'Контрактные', 'contractual')
+            +toggle('main__toggle', 'Эксклюзивные', 'exclusive')
+            +toggle('main__toggle', 'Распродажа', 'sale')
+    section.main__content#main__content
+        div.main__sorting-row
+            span.main__products-sum
+            button.main__filters-button#filters-button фильтры
+            div.select#select
+                button.select__button 
+                    p.selected-option Сначала дорогие
+                div.backdrop
+                form.select__content
+                    input(id="expensive-first" type="radio" name="select-sorting" value="Сначала дорогие" checked).select__input
+                    label(for="expensive-first").select__label Сначала дорогие
+                    input(id="cheap-first" type="radio" name="select-sorting" value="Сначала недорогие").select__input
+                    label(for="cheap-first").select__label Сначала недорогие
+                    input(id="popular-first" type="radio" name="select-sorting" value="Сначала популярные" disabled).select__input
+                    label(for="popular-first").select__label Сначала популярные
+                    input(id="new-first" type="radio" name="select-sorting" value="Сначала новые" disabled).select__input
+                    label(for="new-first").select__label Сначала новые
+        h3.main__products-error
+        div.main__products-container

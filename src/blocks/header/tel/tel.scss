@@ -1,0 +1,32 @@
+@import '@scss/variables.scss';
+
+.tel {
+    display: flex;
+    flex-direction: column;
+}
+
+.tel__number {
+    line-height: 1rem;
+    font-weight: 500;
+}
+
+.tel__description {
+    margin-top: 2px;
+    font-size: torem(14);
+    line-height: torem(14);
+    font-weight: 500;
+    opacity: .3;
+}
+
+@include large-up {
+    .tel {
+        display: none;
+    }
+}
+
+@include large {
+    .tel {
+        display: flex;
+        width: 100%;
+    }
+}

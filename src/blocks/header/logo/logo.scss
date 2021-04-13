@@ -1,0 +1,23 @@
+@import '@scss/variables.scss';
+
+.logo {
+    display: block;
+}
+
+.logo__text {
+    font-family: 'TT Hoves', sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    text-transform: uppercase;
+    
+    &::after {
+    content: '';
+    display: inline-block;
+    background: $black;
+    width: 8px;
+    height: 8px;
+    margin-left: 2px;
+    border-radius: 50%;
+    vertical-align: super;
+    }
+}

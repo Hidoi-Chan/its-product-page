@@ -1,0 +1,8 @@
+mixin icon(className)
+    i(class!=`icon ${className}`)
+        case className
+            when 'basket'
+                span 0
+            default
+                img(src=`assets/fonts/${className}.svg`)
+        

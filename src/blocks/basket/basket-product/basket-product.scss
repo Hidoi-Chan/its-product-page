@@ -1,0 +1,139 @@
+@import '@scss/variables.scss';
+
+.basket-product {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 12px 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+
+    &_disabled {
+
+        .basket-product__img {
+            opacity: .4;
+        }
+
+        .basket-product__text,
+        .basket-product__counters {
+            opacity: .2;
+        }
+
+        .basket-product__counter-button {            
+            &:hover {
+                background: $grey;
+            }
+        }
+    }
+}
+
+.basket-product__img {
+    width: 96px;
+    height: 96px;
+    object-position: center;
+    object-fit: contain;
+}
+
+.basket-product__text {
+    padding: 0 12px;
+    width: 200px;
+}
+
+.basket-product__title,
+.basket-product__price {
+    margin: 14px;
+}
+
+.basket-product__title {
+    font-weight: 300;
+    line-height: torem(18);
+    height: torem(36);
+    overflow: hidden;
+    display: -webkit-box;
+    display: box;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    -ms-line-clamp: 2;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+}
+
+.basket-product__price {
+    font-weight: 600;
+}
+
+.basket-product__counters {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.basket-product__counter-button,
+.basket-product__counter {
+    margin: 0 20px;
+}
+
+.basket-product__counter-button {
+    width: 40px;
+    font-size: 24px;
+    line-height: 24px;
+    background: $grey;
+    border-radius: 4px;
+    transition: 300ms ease;
+
+    &:hover {
+        background: $green;
+    }
+}
+
+.basket-product__control {
+    position: absolute;
+    top: calc(50% - 12px);
+    right: 0;
+    width: 24px;
+    height: 24px;
+    transition: 300ms ease;
+
+    &[data-action="delete"] {    
+        opacity: .2;
+        
+        &::before,
+        &::after {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            content: '';
+            height: 24px;
+            width: 1px;
+            background: $black;
+        }
+    
+        &::before {
+            transform: rotate(45deg);
+        }
+    
+        &::after {
+            transform: rotate(-45deg);
+        }
+    
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &[data-action="repeat"] {
+        background-image: url(@/icons/repeat.svg);
+    }
+}
+
+@include small {
+    .basket-product {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .basket-product__link-img {
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+}

@@ -1,0 +1,29 @@
+include ../icon/icon.pug
+
+header.header
+    a(class!="logo header__logo" href='/') 
+        span.logo__text colors
+    button.burger__button.header__burger-button#burger-button
+        span
+        span
+        span
+    div.burger__container.header__burger-container#burger-container
+        div.burger__block
+            nav.nav#header-nav
+            a(href="tel:+74952217769").tel
+                spun.tel__number +7 (495) 221-77-69
+                spun.tel__description Заказать звонок
+            div.icons-container
+                +icon('search')
+                +icon('profile')
+                +icon('heart')
+        div.backdrop
+    +icon('basket')
+    ul.breadcrumb
+        li.breadcrumb__item 
+            a(href="#") Главная
+        li.breadcrumb__item
+            a(href="#") Продукты
+        li.breadcrumb__item
+            span Краски
+

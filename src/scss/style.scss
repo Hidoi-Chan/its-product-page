@@ -1,0 +1,79 @@
+@import '~normalize.css';
+@import '@scss/fonts.scss';
+@import '@scss/variables.scss';
+
+body {
+    max-width: 1920px;
+    background: #fff;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: $black;
+}
+
+a {
+    text-decoration: none;
+    color: $black;
+}
+
+button {
+    outline: none;
+    border: none;
+    padding: 0;
+    background: none;
+    font-family: "Inter", sans-serif;
+    color: $black;
+    cursor: pointer;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: torem(72);
+    line-height: torem(63);
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 1rem;
+    line-height: torem(21);
+    font-weight: 500;
+}
+
+.backdrop {    
+    z-index: 50;
+    background: rgba(0, 0, 0, .7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+
+.h1 {
+    display: none;
+    padding: 75px 24px 0;
+    font-size: torem(36);
+    font-size: torem(32);
+    box-sizing: border-box;
+}
+
+@include medium {    
+    .h1 {
+        display: block;
+    }
+}

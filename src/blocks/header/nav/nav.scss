@@ -1,0 +1,69 @@
+@import '@scss/variables.scss';
+
+// .nav {    
+//     flex-grow: 1;
+// }
+
+.nav__menu {
+    display: flex;
+}
+
+.nav__item {
+    position: relative;
+}
+
+.nav__link {
+    display: block;
+    padding: 10px 12px;
+    cursor: pointer;
+    font-size: torem(14);
+    line-height: torem(14);
+    font-weight: 400;
+    text-transform: uppercase;
+    transition: 300ms ease;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        display: block;
+        background: $black;
+        width: 0;
+        height: 0;
+        transition: 300ms ease;
+    }
+
+    &:hover,
+    &.active {
+
+        &::after {
+            width: calc(100% - 24px);
+            height: 1px;
+            left: 12px;
+        }
+    }
+}
+
+@include large {
+    .nav {
+        width: 100%;
+    }
+
+    .nav__menu {
+        flex-direction: column;
+    }
+
+    .nav__link {
+        padding: 1rem 0;
+        
+        &:hover,
+        &.active {
+            font-weight: 600;
+            &::after {
+                width: 0;
+            }
+        }
+    }
+}
+

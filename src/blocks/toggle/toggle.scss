@@ -1,0 +1,64 @@
+@import '@scss/variables.scss';
+
+.toggle {
+    display: block;
+
+    input {
+        display: none;
+
+        &:checked + .toggle__text {
+
+            &:after {
+                left: 22px;
+
+            }
+
+            &:before {
+                background: $green;
+            }
+        }
+    }
+
+    &__text {
+        position: relative;
+        padding-left: 48px;
+        cursor: pointer;
+        font-size: torem(12);
+        line-height: torem(22);
+        text-transform: uppercase;
+        white-space: nowrap;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 1px;
+            left: 0;
+            width: 36px;
+            height: 22px;
+            box-sizing: border-box;
+            border-radius: 40px;
+            background: $grey;
+            transition: 300ms ease;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: calc(50% - 3px);
+            left: 7px;
+            width: 8px;
+            height: 8px;
+            background: $black;
+            border-radius: 10px;
+            transition: 300ms ease;
+        }
+    }
+}
+
+// @include small {
+
+//     .toggle__text {
+//         padding-left: 46px;
+//         font-size: torem(13);
+//     }
+// }

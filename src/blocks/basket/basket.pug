@@ -1,0 +1,17 @@
+div.basket#basket
+    div.backdrop
+    div.basket__container
+        h3.basket__title Корзина
+        div.basket__products
+            div.basket__products-control
+                span.basket__products-sum
+                button(data-action="clean").basket__clean Очистить список
+            h3.basket__product-error
+            div.basket__product-cards
+        div.basket__price-row
+            div.basket__price 
+                span Итого&nbsp;
+                span.basket__price-sum 
+                span &nbsp;&#8381;
+            button(data-action="buy").basket__buy Оформить заказ
+        button(data-action="close").basket__close
