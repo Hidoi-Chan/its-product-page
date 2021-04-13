@@ -45,7 +45,7 @@ export default class Basket {
         let sum = this.products.reduce((sum, item) => {
             if (item.filters['in-stock']) {
                 sum+= item.sum
-                allSum+= item.price
+                allSum+= item.price * item.sum
             }
             return sum
         }, 0)
