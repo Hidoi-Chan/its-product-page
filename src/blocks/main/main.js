@@ -18,11 +18,13 @@ export class Filters {
     }
 
     open() {
-        this.$elem.classList.add('main__sidebar_open')
+        this.$elem.classList.add('main__sidebar_open')        
+        document.body.style.overflow = 'hidden'
     }
 
     close() {
-        this.$elem.classList.remove('main__sidebar_open')
+        this.$elem.classList.remove('main__sidebar_open')        
+        document.body.style.overflow = 'visible'
     }
 
     changeFilters(event, arr) {

@@ -51,14 +51,14 @@
 
 .main__products-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill);
-    grid-gap: 24px;
+    grid-template-columns: repeat(auto-fill, calc((100% - (1.5rem * 4)) / 5));
+    grid-gap: 1.5rem 1rem;
     justify-content: space-between;
 }
 
 @include large-up {
     .main__products-container {
-        grid-template-columns: repeat(auto-fill, 30%);
+        grid-template-columns: repeat(auto-fill, calc((100% - (1.5rem * 2)) / 3));
     }
 }
 
@@ -106,9 +106,7 @@
     }
 
     .main__products-container {
-        grid-template-columns: repeat(auto-fill, 46%);
-        grid-column: 8%;
-        grid-row: 1rem;
+        grid-template-columns: repeat(auto-fill, calc((100% - 1.5rem) / 2));
     }
 }
 

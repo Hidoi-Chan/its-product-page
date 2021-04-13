@@ -16,9 +16,11 @@ export default class Burger {
 
     open() {
         this.$elem.classList.add('header__burger-container_open')
+        document.body.style.overflow = 'hidden'
     }
 
     close() {
         this.$elem.classList.remove('header__burger-container_open')
+        document.body.style.overflow = 'visible'
     }
 }

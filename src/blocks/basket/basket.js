@@ -102,10 +102,12 @@ export default class Basket {
 
     open() {
         this.$elem.classList.add('basket_open')
+        document.body.style.overflow = 'hidden'
     }
 
     close() {
         this.$elem.classList.remove('basket_open')
+        document.body.style.overflow = 'visible'
     }
 
     clean() {
