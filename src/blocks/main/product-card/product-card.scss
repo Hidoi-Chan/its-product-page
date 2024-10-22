@@ -1,7 +1,7 @@
 @import '@scss/variables.scss';
 
 .product-card {
-    max-width: 278px;
+    width: 100%;
     padding-bottom: 14px;
     border-bottom: 1px solid rgba($color: #000, $alpha: .1);
 }
@@ -10,7 +10,7 @@
     width: 100%;
     min-height: 150px;
     object-position: center;
-    object-fit: none;
+    object-fit: scale-down;
 }
 
 .product-card__title {
